@@ -6,29 +6,13 @@ import java.awt.Color;
 import javax.swing.*;
 import java.awt.Font;
 import java.awt.event.*;
+import java.text.DecimalFormat;
 
 public class RecebeNotas extends JFrame {
 
 	public JPanel contentPane;
-	private JTextField tfS1_pp;
-	private JTextField tfS2_pp;
-	private JTextField tfS3_pp;
-	private JTextField tfS4_pp;
-	private JTextField tfS5_pp;
-	private JTextField tfS6_pp;
-	private JTextField tfS7_pp;
-	private JTextField tfS8_pp;
-	private JTextField tfS9_pp;
-	private JTextField tfS10_pp;
-	private JTextField tfS11_pp;
-	private JTextField tfS12_pp;
-	private JTextField tfS13_pp;
-	private JTextField tfS14_pp;
-	private JTextField tfS15_pp;
-	private JTextField tfS16_pp;
-	private JTextField tfS17_pp;
-	private JTextField tfS18_pp;
-	private JTextField tfS19_pp;
+	private JTextField tfS1_pp, tfS2_pp, tfS3_pp, tfS4_pp, tfS5_pp, tfS6_pp, tfS7_pp, 
+	tfS8_pp, tfS9_pp, tfS10_pp, tfS11_pp, tfS12_pp, tfS13_pp, tfS14_pp, tfS15_pp, tfS16_pp, tfS17_pp, tfS18_pp, tfS19_pp;
 	private JTextField tfptS1;
 	private JTextField tfptS19;
 	private JTextField tfpvtS18;
@@ -78,31 +62,10 @@ public class RecebeNotas extends JFrame {
 	private JLabel lblPt;
 	private JLabel lblPe;
 	private JLabel lblPen;
-	private JLabel lblFinal;
-	private JTextField textField_AE_ingles;
-	private JTextField textField_AE_mat;
-	private JTextField textField_AE_TEC_INF;
-	private JTextField textField_AE_LOGICA;
-	private JTextField textField_AE_SISTEMAS;
-	private JTextField textField_AE_ARQ;
-	private JTextField textField_PT_ingles;
-	private JTextField textField_PT_mat;
-	private JTextField textField_PT_TEC_INF;
-	private JTextField textField_PT_LOGICA;
-	private JTextField textField_PT_SISTEMAS;
-	private JTextField textField_PT_ARQ;
-	private JTextField textField_PE_ingles;
-	private JTextField textField_PE_mat;
-	private JTextField textField_PE_TEC_INF;
-	private JTextField textField_PE_LOGICA;
-	private JTextField textField_PE_SISTEMAS;
-	private JTextField textField_PE_ARQ;
-	private JTextField textField_PEN_ingles;
-	private JTextField textField_PEN_mat;
-	private JTextField textField_PEN_TEC_INF;
-	private JTextField textField_PEN_LOGICA;
-	private JTextField textField_PEN_SISTEMAS;
-	private JTextField textField_PEN_ARQ;
+	private JTextField textField_AE_ingles, textField_AE_mat, textField_AE_TEC_INF, textField_AE_LOGICA, textField_AE_SISTEMAS, textField_AE_ARQ;
+	private JTextField textField_PT_ingles, textField_PT_mat, textField_PT_TEC_INF, textField_PT_LOGICA, textField_PT_SISTEMAS, textField_PT_ARQ;
+	private JTextField textField_PE_ingles,textField_PE_mat, textField_PE_TEC_INF, textField_PE_LOGICA, textField_PE_SISTEMAS, textField_PE_ARQ; 
+	private JTextField textField_PEN_ingles, textField_PEN_mat, textField_PEN_TEC_INF,textField_PEN_LOGICA,textField_PEN_SISTEMAS, textField_PEN_ARQ;
 	double resultado; 
 	fazer fazer = new fazer();
 
@@ -118,6 +81,7 @@ public class RecebeNotas extends JFrame {
 			}
 		});
 	}	
+	
 	public RecebeNotas() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 741, 460);
@@ -146,8 +110,7 @@ public class RecebeNotas extends JFrame {
 		
 		JLabel lblNewLabel_3 = new JLabel("P.T");
 		lblNewLabel_3.setBounds(10, 100, 46, 14);
-		panel.add(lblNewLabel_3);
-		
+		panel.add(lblNewLabel_3);		
 		//-------------------------SEMANA--01-------------------------------------------------
 		tfS1_pp = new JTextField();		
 		tfS1_pp.setBounds(66, 60, 27, 17);
@@ -163,7 +126,7 @@ public class RecebeNotas extends JFrame {
 		tfptS1.setColumns(10);
 		tfptS1.setBounds(66, 100, 27, 17);
 		panel.add(tfptS1);
-		fazer.addAcao(tfptS1, tfpvtS1, tfS1_pp);
+		tfptS1.setEnabled(false);	
 		//--------------------------SEMANA--02------------------------------------------------
 		tfS2_pp = new JTextField();
 		tfS2_pp.setColumns(10);
@@ -179,7 +142,7 @@ public class RecebeNotas extends JFrame {
 		tfptS2.setColumns(10);
 		tfptS2.setBounds(99, 100, 27, 17);
 		panel.add(tfptS2);
-		fazer.addAcao(tfptS2, tfpvtS2, tfS2_pp);
+		tfptS2.setEnabled(false);
 		//--------------------------SEMANA--03------------------------------------------------
 		tfS3_pp = new JTextField();
 		tfS3_pp.setColumns(10);
@@ -195,7 +158,7 @@ public class RecebeNotas extends JFrame {
 		tfptS3.setColumns(10);
 		tfptS3.setBounds(133, 100, 27, 17);
 		panel.add(tfptS3);
-		fazer.addAcao(tfptS3, tfpvtS3, tfS3_pp);
+		tfptS3.setEnabled(false);
 		//----------------------------SEMANA--04------------------------------------------------
 		tfS4_pp = new JTextField();
 		tfS4_pp.setColumns(10);
@@ -211,7 +174,7 @@ public class RecebeNotas extends JFrame {
 		tfptS4.setColumns(10);
 		tfptS4.setBounds(166, 100, 27, 17);
 		panel.add(tfptS4);
-		fazer.addAcao(tfptS4, tfpvtS4, tfS4_pp);
+		tfptS4.setEnabled(false);
 		//--------------------------SEMANA--05------------------------------------------------
 		tfS5_pp = new JTextField();
 		tfS5_pp.setColumns(10);
@@ -227,7 +190,7 @@ public class RecebeNotas extends JFrame {
 		tfptS5.setColumns(10);
 		tfptS5.setBounds(199, 100, 27, 17);
 		panel.add(tfptS5);
-		fazer.addAcao(tfptS5, tfpvtS5, tfS5_pp);
+		tfptS5.setEnabled(false);
 		//----------------------------SEMANA--06----------------------------------------------
 		tfS6_pp = new JTextField();
 		tfS6_pp.setColumns(10);
@@ -243,7 +206,7 @@ public class RecebeNotas extends JFrame {
 		tfptS6.setColumns(10);
 		tfptS6.setBounds(232, 100, 27, 17);
 		panel.add(tfptS6);
-		fazer.addAcao(tfptS6, tfpvtS6, tfS6_pp);
+		tfptS6.setEnabled(false);
 		//-----------------------------SEMANA--07---------------------------------------------
 		tfS7_pp = new JTextField();
 		tfS7_pp.setColumns(10);
@@ -259,7 +222,7 @@ public class RecebeNotas extends JFrame {
 		tfptS7.setColumns(10);
 		tfptS7.setBounds(265, 100, 27, 17);
 		panel.add(tfptS7);
-		fazer.addAcao(tfptS7, tfpvtS7, tfS7_pp);
+		tfptS7.setEnabled(false);
 		//-----------------------------SEMANA--08---------------------------------------------
 		tfS8_pp = new JTextField();
 		tfS8_pp.setColumns(10);
@@ -275,7 +238,7 @@ public class RecebeNotas extends JFrame {
 		tfptS8.setColumns(10);
 		tfptS8.setBounds(297, 100, 27, 17);
 		panel.add(tfptS8);
-		fazer.addAcao(tfptS8, tfpvtS8, tfS8_pp);
+		tfptS8.setEnabled(false);
 		//----------------------------SEMANA--09----------------------------------------------
 		tfS9_pp = new JTextField();
 		tfS9_pp.setColumns(10);
@@ -291,7 +254,7 @@ public class RecebeNotas extends JFrame {
 		tfptS9.setColumns(10);
 		tfptS9.setBounds(328, 100, 27, 17);
 		panel.add(tfptS9);
-		fazer.addAcao(tfptS9, tfpvtS9, tfS9_pp);
+		tfptS9.setEnabled(false);
 		//---------------------------SEMANA--10-----------------------------------------------
 		tfS10_pp = new JTextField();
 		tfS10_pp.setColumns(10);
@@ -307,7 +270,7 @@ public class RecebeNotas extends JFrame {
 		tfptS10.setColumns(10);
 		tfptS10.setBounds(362, 100, 27, 17);
 		panel.add(tfptS10);
-		fazer.addAcao(tfptS10, tfpvtS10, tfS10_pp);
+		tfptS10.setEnabled(false);
 		//-----------------------------SEMANA--11---------------------------------------------
 		tfS11_pp = new JTextField();
 		tfS11_pp.setColumns(10);
@@ -323,7 +286,7 @@ public class RecebeNotas extends JFrame {
 		tfptS11.setColumns(10);
 		tfptS11.setBounds(394, 100, 27, 17);
 		panel.add(tfptS11);
-		fazer.addAcao(tfptS11, tfpvtS11, tfS11_pp);
+		tfptS11.setEnabled(false);
 		//-----------------------------SEMANA--12---------------------------------------------
 		tfS12_pp = new JTextField();
 		tfS12_pp.setColumns(10);
@@ -339,7 +302,7 @@ public class RecebeNotas extends JFrame {
 		tfptS12.setColumns(10);
 		tfptS12.setBounds(428, 100, 27, 17);
 		panel.add(tfptS12);
-		fazer.addAcao(tfptS12, tfpvtS12, tfS12_pp);
+		tfptS12.setEnabled(false);
 		//-----------------------------SEMANA--13---------------------------------------------
 		tfS13_pp = new JTextField();
 		tfS13_pp.setColumns(10);
@@ -355,7 +318,7 @@ public class RecebeNotas extends JFrame {
 		tfptS13.setColumns(10);
 		tfptS13.setBounds(462, 100, 27, 17);
 		panel.add(tfptS13);
-		fazer.addAcao(tfptS13, tfpvtS13, tfS13_pp);
+		tfptS13.setEnabled(false);
 		//-----------------------------SEMANA--14---------------------------------------------
 		tfS14_pp = new JTextField();
 		tfS14_pp.setColumns(10);
@@ -371,7 +334,7 @@ public class RecebeNotas extends JFrame {
 		tfptS14.setColumns(10);
 		tfptS14.setBounds(496, 100, 27, 17);
 		panel.add(tfptS14);
-		fazer.addAcao(tfptS14, tfpvtS14, tfS14_pp);
+		tfptS14.setEnabled(false);
 		//----------------------------SEMANA--15-----------------------------------------------
 		tfS15_pp = new JTextField();
 		tfS15_pp.setColumns(10);
@@ -387,7 +350,7 @@ public class RecebeNotas extends JFrame {
 		tfptS15.setColumns(10);
 		tfptS15.setBounds(530, 100, 27, 17);
 		panel.add(tfptS15);
-		fazer.addAcao(tfptS15, tfpvtS15, tfS15_pp);
+		tfptS15.setEnabled(false);
 		//---------------------------SEMANA--16------------------------------------------------
 		tfS16_pp = new JTextField();
 		tfS16_pp.setColumns(10);
@@ -403,7 +366,7 @@ public class RecebeNotas extends JFrame {
 		tfptS16.setColumns(10);
 		tfptS16.setBounds(563, 100, 27, 17);
 		panel.add(tfptS16);
-		fazer.addAcao(tfptS16, tfpvtS16, tfS16_pp);
+		tfptS16.setEnabled(false);
 		//-------------------------SEMANA--17--------------------------------------------------
 		tfS17_pp = new JTextField();
 		tfS17_pp.setColumns(10);
@@ -419,7 +382,7 @@ public class RecebeNotas extends JFrame {
 		tfptS17.setColumns(10);
 		tfptS17.setBounds(598, 100, 27, 17);
 		panel.add(tfptS17);
-		fazer.addAcao(tfptS17, tfpvtS17, tfS17_pp);
+		tfptS17.setEnabled(false);
 		//--------------------------SEMANA--18-----------------------------------------------
 		tfS18_pp = new JTextField();
 		tfS18_pp.setColumns(10);
@@ -435,7 +398,7 @@ public class RecebeNotas extends JFrame {
 		tfptS18.setColumns(10);
 		tfptS18.setBounds(630, 100, 27, 17);
 		panel.add(tfptS18);
-		fazer.addAcao(tfptS18, tfpvtS18, tfS18_pp);
+		tfptS18.setEnabled(false);
 		//-------------------------SEMANA--19-----------------------------------------------
 		tfS19_pp = new JTextField();
 		tfS19_pp.setColumns(10);
@@ -451,7 +414,7 @@ public class RecebeNotas extends JFrame {
 		tfptS19.setColumns(10);
 		tfptS19.setBounds(664, 100, 27, 17);
 		panel.add(tfptS19);
-		fazer.addAcao(tfptS19, tfpvtS19, tfS19_pp);
+		tfptS19.setEnabled(false);
 		//-------------------------JLABEL--DAS--SEMANAS-------------------------------------------			
 		JLabel lbS1 = new JLabel("S1");
 		lbS1.setBounds(74, 40, 26, 14);
@@ -529,6 +492,28 @@ public class RecebeNotas extends JFrame {
 		lblS_18.setBounds(664, 40, 27, 14);
 		panel.add(lblS_18);
 		
+		//-----------------------selecionando todo conteudo sozinho------------------------------------
+		fazer.selecionaTodoConteudo(tfS1_pp,tfpvtS1);
+		fazer.selecionaTodoConteudo(tfS2_pp,tfpvtS2);
+		fazer.selecionaTodoConteudo(tfS3_pp,tfpvtS3);
+		fazer.selecionaTodoConteudo(tfS4_pp,tfpvtS4);
+		fazer.selecionaTodoConteudo(tfS5_pp,tfpvtS5);
+		fazer.selecionaTodoConteudo(tfS6_pp,tfpvtS6);
+		fazer.selecionaTodoConteudo(tfS7_pp,tfpvtS7);
+		fazer.selecionaTodoConteudo(tfS8_pp,tfpvtS8);
+		fazer.selecionaTodoConteudo(tfS9_pp,tfpvtS9);
+		fazer.selecionaTodoConteudo(tfS10_pp,tfpvtS10);
+		fazer.selecionaTodoConteudo(tfS11_pp,tfpvtS11);
+		fazer.selecionaTodoConteudo(tfS12_pp,tfpvtS12);
+		fazer.selecionaTodoConteudo(tfS13_pp,tfpvtS13);
+		fazer.selecionaTodoConteudo(tfS14_pp,tfpvtS14);
+		fazer.selecionaTodoConteudo(tfS15_pp,tfpvtS15);
+		fazer.selecionaTodoConteudo(tfS16_pp,tfpvtS16);
+		fazer.selecionaTodoConteudo(tfS17_pp,tfpvtS17);
+		fazer.selecionaTodoConteudo(tfS18_pp,tfpvtS18);
+		fazer.selecionaTodoConteudo(tfS19_pp,tfpvtS19);	
+		
+		//---------------------------------------------------------------------------------------
 		JLabel lblNotasSemanais = new JLabel("NOTAS SEMANAIS");
 		lblNotasSemanais.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		lblNotasSemanais.setBounds(265, 0, 173, 43);
@@ -578,15 +563,10 @@ public class RecebeNotas extends JFrame {
 		lblPe.setBounds(225, 219, 19, 14);
 		contentPane.add(lblPe);
 		
-		lblPen = new JLabel("P.E.N");
+		lblPen = new JLabel("FINAL");
 		lblPen.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblPen.setBounds(254, 219, 33, 14);
 		contentPane.add(lblPen);
-		
-		lblFinal = new JLabel("FINAL");
-		lblFinal.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblFinal.setBounds(290, 219, 38, 14);
-		contentPane.add(lblFinal);
 		
 		textField_AE_ingles = new JTextField();
 		textField_AE_ingles.setColumns(10);
@@ -709,13 +689,92 @@ public class RecebeNotas extends JFrame {
 		contentPane.add(textField_PEN_ARQ);
 				
 		JButton btnLimparTudo = new JButton("LIMPAR TUDO");
-		btnLimparTudo.setBounds(297, 138, 131, 23);
+		btnLimparTudo.setBounds(370, 131, 120, 25);
 		panel.add(btnLimparTudo);
 		btnLimparTudo.addActionListener(new ActionListener() {		
 			public void actionPerformed(ActionEvent e) {
-				fazer.limparCampos(panel);				
+				String message = "Deseja realmente limpar todos os campos ?";
+				String title = "Confirmação";
+				int reply = JOptionPane.showConfirmDialog(null, message, title, JOptionPane.YES_NO_OPTION);
+				if (reply == JOptionPane.YES_OPTION){
+				   	fazer.limparCampos(panel);	
+				}
 			}
 		});		
+		
+		JButton btnCalcularPt = new JButton("CALCULAR P.T");
+		btnCalcularPt.setBounds(240, 131, 120, 25);
+		panel.add(btnCalcularPt);
+		btnCalcularPt.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//----------------------SEMANA-1-----------------------------
+				tfptS1.setText(fazer.calculaNotasSemanais(tfpvtS1, tfS1_pp));
+				fazer.mudaCor(tfptS1.getText(), tfptS1);
+				//----------------------SEMANA-2------------------------------
+				tfptS2.setText(fazer.calculaNotasSemanais(tfpvtS2, tfS2_pp));
+				fazer.mudaCor(tfptS2.getText(), tfptS2);
+				//----------------------SEMANA-3------------------------------
+				tfptS3.setText(fazer.calculaNotasSemanais(tfpvtS3, tfS3_pp));
+				fazer.mudaCor(tfptS3.getText(), tfptS3);
+				//---------------------SEMANA-4-------------------------------
+				tfptS4.setText(fazer.calculaNotasSemanais(tfpvtS4, tfS4_pp));
+				fazer.mudaCor(tfptS4.getText(), tfptS4);
+				//----------------------SEMANA-5------------------------------
+				tfptS5.setText(fazer.calculaNotasSemanais(tfpvtS5, tfS4_pp));
+				fazer.mudaCor(tfptS5.getText(), tfptS5);
+				//--------------------SEMANA-6--------------------------------
+				tfptS6.setText(fazer.calculaNotasSemanais(tfpvtS6, tfS6_pp));
+				fazer.mudaCor(tfptS6.getText(), tfptS6);
+				//---------------------SEMANA-7-------------------------------
+				tfptS7.setText(fazer.calculaNotasSemanais(tfpvtS7, tfS7_pp));
+				fazer.mudaCor(tfptS7.getText(), tfptS7);
+				//---------------------SEMANA-8-------------------------------
+				tfptS8.setText(fazer.calculaNotasSemanais(tfpvtS8, tfS8_pp));
+				fazer.mudaCor(tfptS8.getText(), tfptS8);
+				//---------------------SEMANA-9-------------------------------
+				tfptS9.setText(fazer.calculaNotasSemanais(tfpvtS9, tfS8_pp));
+				fazer.mudaCor(tfptS9.getText(), tfptS9);
+				//---------------------SEMANA-10-------------------------------
+				tfptS10.setText(fazer.calculaNotasSemanais(tfpvtS10, tfS10_pp));
+				fazer.mudaCor(tfptS10.getText(), tfptS10);
+				//---------------------SEMANA-11-------------------------------
+				tfptS11.setText(fazer.calculaNotasSemanais(tfpvtS11, tfS11_pp));
+				fazer.mudaCor(tfptS11.getText(), tfptS11);
+				//---------------------SEMANA-12-------------------------------
+				tfptS12.setText(fazer.calculaNotasSemanais(tfpvtS12, tfS12_pp));
+				fazer.mudaCor(tfptS12.getText(), tfptS12);
+				//---------------------SEMANA-13-------------------------------
+				tfptS13.setText(fazer.calculaNotasSemanais(tfpvtS13, tfS13_pp));
+				fazer.mudaCor(tfptS13.getText(), tfptS13);
+				//--------------------SEMANA-14--------------------------------
+				tfptS14.setText(fazer.calculaNotasSemanais(tfpvtS14, tfS14_pp));
+				fazer.mudaCor(tfptS14.getText(), tfptS14);
+				//--------------------SEMANA-15--------------------------------
+				tfptS15.setText(fazer.calculaNotasSemanais(tfpvtS15, tfS15_pp));
+				fazer.mudaCor(tfptS15.getText(), tfptS15);
+				//--------------------SEMANA-16--------------------------------
+				tfptS16.setText(fazer.calculaNotasSemanais(tfpvtS16, tfS16_pp));
+				fazer.mudaCor(tfptS16.getText(), tfptS16);
+				//--------------------SEMANA-17--------------------------------
+				tfptS17.setText(fazer.calculaNotasSemanais(tfpvtS17, tfS17_pp));
+				fazer.mudaCor(tfptS17.getText(), tfptS17);
+				//--------------------SEMANA-18--------------------------------
+				tfptS18.setText(fazer.calculaNotasSemanais(tfpvtS18, tfS18_pp));
+				fazer.mudaCor(tfptS18.getText(), tfptS18);
+				//--------------------SEMANA-19--------------------------------
+				tfptS19.setText(fazer.calculaNotasSemanais(tfpvtS19, tfS19_pp));
+				fazer.mudaCor(tfptS19.getText(), tfptS19);
+				
+				
+				textField_PT_ingles.setText(fazer.calculaNotaTotalIngles(tfptS1, tfptS2, tfptS3, tfptS4, tfptS5, tfptS6, tfptS7, tfptS8, tfptS9, tfptS10));
+				textField_PT_mat.setText(fazer.calculaNotaTotalMatematica(tfptS1, tfptS2, tfptS3, tfptS4, tfptS5, tfptS6, tfptS7, tfptS8, tfptS9, tfptS10));
+				textField_PT_ARQ.setText(fazer.calculaNotaTotalARQUITETURA(tfptS9, tfptS10, tfptS11, tfptS12, tfptS13));
+				textField_PT_TEC_INF.setText(fazer.calculaNotaTotalTI(tfptS1, tfptS2, tfptS3, tfptS4, tfptS5, tfptS6, tfptS7, tfptS8));
+				textField_PT_SISTEMAS.setText(fazer.calculaNotaTotalSO(tfptS11, tfptS12, tfptS13, tfptS14, tfptS15, tfptS16, tfptS17, tfptS18, tfptS19));
+				textField_PT_LOGICA.setText(fazer.calculaNotaTotalLogica(tfptS11, tfptS12, tfptS13, tfptS14, tfptS15, tfptS16, tfptS17, tfptS18, tfptS19));
+			}
+		});
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		addWindowListener(new WindowAdapter(){
 			public void windowClosing(WindowEvent e) {
