@@ -56,9 +56,10 @@ public class RecebeNotas extends JFrame {
 	private JTextField textField_AE_ingles, textField_AE_mat, textField_AE_TEC_INF, textField_AE_LOGICA, textField_AE_SISTEMAS, textField_AE_ARQ;
 	private JTextField textField_PT_ingles, textField_PT_mat, textField_PT_TEC_INF, textField_PT_LOGICA, textField_PT_SISTEMAS, textField_PT_ARQ;
 	private JTextField textField_PE_ingles,textField_PE_mat, textField_PE_TEC_INF, textField_PE_LOGICA, textField_PE_SISTEMAS, textField_PE_ARQ; 
-	private JTextField textField_PEN_ingles, textField_PEN_mat, textField_PEN_TEC_INF,textField_PEN_LOGICA,textField_PEN_SISTEMAS, textField_PEN_ARQ;
+	private JTextField final_ingles, final_mat, final_TEC_INF,final_LOGICA,final_SISTEMAS, final_ARQ;
 	double resultado; 
 	fazer fazer = new fazer();
+	private JTextField tffinalModulo;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -74,15 +75,16 @@ public class RecebeNotas extends JFrame {
 	}		
 	public RecebeNotas() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 741, 460);
+		setBounds(100, 100, 714, 460);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setResizable(false);
 		//--------------------JPANEL--NOTAS--SEMANAIS------------------------------------------------
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 43, 725, 165);
+		panel.setBounds(0, 43, 714, 165);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		//--------------------JLABEL--NOTAS--SEMANAIS------------------------------------------------
@@ -648,35 +650,35 @@ public class RecebeNotas extends JFrame {
 		textField_PE_ARQ.setBounds(220, 312, 27, 17);
 		contentPane.add(textField_PE_ARQ);
 		
-		textField_PEN_ingles = new JTextField();
-		textField_PEN_ingles.setColumns(10);
-		textField_PEN_ingles.setBounds(254, 232, 27, 17);
-		contentPane.add(textField_PEN_ingles);
+		final_ingles = new JTextField();
+		final_ingles.setColumns(10);
+		final_ingles.setBounds(254, 232, 27, 17);
+		contentPane.add(final_ingles);
 		
-		textField_PEN_mat = new JTextField();
-		textField_PEN_mat.setColumns(10);
-		textField_PEN_mat.setBounds(254, 248, 27, 17);
-		contentPane.add(textField_PEN_mat);
+		final_mat = new JTextField();
+		final_mat.setColumns(10);
+		final_mat.setBounds(254, 248, 27, 17);
+		contentPane.add(final_mat);
 		
-		textField_PEN_TEC_INF = new JTextField();
-		textField_PEN_TEC_INF.setColumns(10);
-		textField_PEN_TEC_INF.setBounds(254, 264, 27, 17);
-		contentPane.add(textField_PEN_TEC_INF);
+		final_TEC_INF = new JTextField();
+		final_TEC_INF.setColumns(10);
+		final_TEC_INF.setBounds(254, 264, 27, 17);
+		contentPane.add(final_TEC_INF);
 		
-		textField_PEN_LOGICA = new JTextField();
-		textField_PEN_LOGICA.setColumns(10);
-		textField_PEN_LOGICA.setBounds(254, 280, 27, 17);
-		contentPane.add(textField_PEN_LOGICA);
+		final_LOGICA = new JTextField();
+		final_LOGICA.setColumns(10);
+		final_LOGICA.setBounds(254, 280, 27, 17);
+		contentPane.add(final_LOGICA);
 		
-		textField_PEN_SISTEMAS = new JTextField();
-		textField_PEN_SISTEMAS.setColumns(10);
-		textField_PEN_SISTEMAS.setBounds(254, 296, 27, 17);
-		contentPane.add(textField_PEN_SISTEMAS);
+		final_SISTEMAS = new JTextField();
+		final_SISTEMAS.setColumns(10);
+		final_SISTEMAS.setBounds(254, 296, 27, 17);
+		contentPane.add(final_SISTEMAS);
 		
-		textField_PEN_ARQ = new JTextField();
-		textField_PEN_ARQ.setColumns(10);
-		textField_PEN_ARQ.setBounds(254, 312, 27, 17);
-		contentPane.add(textField_PEN_ARQ);
+		final_ARQ = new JTextField();
+		final_ARQ.setColumns(10);
+		final_ARQ.setBounds(254, 312, 27, 17);
+		contentPane.add(final_ARQ);
 				
 		JButton btnLimparTudo = new JButton("LIMPAR TUDO");
 		btnLimparTudo.setBounds(370, 131, 120, 25);
@@ -692,9 +694,6 @@ public class RecebeNotas extends JFrame {
 			}
 		});		
 		
-		JButton btnCalcularPt = new JButton("CALCULAR P.T");
-		btnCalcularPt.setBounds(240, 131, 120, 25);
-		panel.add(btnCalcularPt);
 		
 		JLabel lblAcimaDaMdia = new JLabel("Acima da M\u00E9dia");
 		lblAcimaDaMdia.setForeground(Color.BLACK);
@@ -709,6 +708,38 @@ public class RecebeNotas extends JFrame {
 		lblAbaixoDaMdia.setOpaque(true);
 		lblAbaixoDaMdia.setBackground(Color.RED);
 		contentPane.add(lblAbaixoDaMdia);
+		
+		JButton btnCalcularPt = new JButton("CALCULAR P.T");
+		btnCalcularPt.setBounds(240, 131, 120, 25);
+		panel.add(btnCalcularPt);
+		
+		JButton btnCalcularModulo = new JButton("Calcular Modulo");
+		btnCalcularModulo.setBounds(90, 378, 137, 23);
+		contentPane.add(btnCalcularModulo);
+		
+		JLabel lblFinalModulo = new JLabel("FINAL");
+		lblFinalModulo.setBounds(99, 353, 46, 14);
+		contentPane.add(lblFinalModulo);
+		
+		tffinalModulo = new JTextField();
+		tffinalModulo.setBounds(141, 353, 46, 17);
+		contentPane.add(tffinalModulo);
+		tffinalModulo.setColumns(10);
+		
+		btnCalcularModulo.addActionListener(new ActionListener() {		
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				final_ingles.setText(fazer.calculaFinalIngles(textField_AE_ingles, textField_PT_ingles, textField_PE_ingles));
+				final_ARQ.setText(fazer.calculaFinalARQUITETURA(textField_AE_ARQ, textField_PT_ARQ, textField_PE_ARQ));
+				final_mat.setText(fazer.calculaFinalMATEMATICA(textField_AE_mat, textField_PT_mat, textField_PE_mat));
+				final_LOGICA.setText(fazer.calculaFinalMATEMATICA(textField_AE_LOGICA, textField_PT_LOGICA, textField_PE_LOGICA));
+				final_SISTEMAS.setText(fazer.calculaFinalMATEMATICA(textField_AE_SISTEMAS, textField_PT_SISTEMAS, textField_PE_SISTEMAS));
+				final_TEC_INF.setText(fazer.calculaFinalMATEMATICA(textField_AE_TEC_INF, textField_PT_TEC_INF, textField_PE_TEC_INF));				
+			
+				tffinalModulo.setText(fazer.notaFinaldoModulo(final_ingles, final_mat, final_ARQ, final_LOGICA, final_TEC_INF, final_SISTEMAS));
+				fazer.mudaCor(tffinalModulo.getText(), tffinalModulo);
+			}
+		});
 		
 		btnCalcularPt.addActionListener(new ActionListener() {
 			@Override
@@ -726,7 +757,7 @@ public class RecebeNotas extends JFrame {
 				tfptS4.setText(fazer.calculaNotasSemanais(tfpvtS4, tfS4_pp));
 				fazer.mudaCor(tfptS4.getText(), tfptS4);
 				//----------------------SEMANA-5------------------------------
-				tfptS5.setText(fazer.calculaNotasSemanais(tfpvtS5, tfS4_pp));
+				tfptS5.setText(fazer.calculaNotasSemanais(tfpvtS5, tfS5_pp));
 				fazer.mudaCor(tfptS5.getText(), tfptS5);
 				//--------------------SEMANA-6--------------------------------
 				tfptS6.setText(fazer.calculaNotasSemanais(tfpvtS6, tfS6_pp));
@@ -738,7 +769,7 @@ public class RecebeNotas extends JFrame {
 				tfptS8.setText(fazer.calculaNotasSemanais(tfpvtS8, tfS8_pp));
 				fazer.mudaCor(tfptS8.getText(), tfptS8);
 				//---------------------SEMANA-9-------------------------------
-				tfptS9.setText(fazer.calculaNotasSemanais(tfpvtS9, tfS8_pp));
+				tfptS9.setText(fazer.calculaNotasSemanais(tfpvtS9, tfS9_pp));
 				fazer.mudaCor(tfptS9.getText(), tfptS9);
 				//---------------------SEMANA-10-------------------------------
 				tfptS10.setText(fazer.calculaNotasSemanais(tfpvtS10, tfS10_pp));
@@ -770,8 +801,7 @@ public class RecebeNotas extends JFrame {
 				//--------------------SEMANA-19--------------------------------
 				tfptS19.setText(fazer.calculaNotasSemanais(tfpvtS19, tfS19_pp));
 				fazer.mudaCor(tfptS19.getText(), tfptS19);
-				
-				
+							
 				textField_PT_ingles.setText(fazer.calculaNotaTotalIngles(tfptS1, tfptS2, tfptS3, tfptS4, tfptS5, tfptS6, tfptS7, tfptS8, tfptS9, tfptS10));
 				textField_PT_mat.setText(fazer.calculaNotaTotalMatematica(tfptS1, tfptS2, tfptS3, tfptS4, tfptS5, tfptS6, tfptS7, tfptS8, tfptS9, tfptS10));
 				textField_PT_ARQ.setText(fazer.calculaNotaTotalARQUITETURA(tfptS9, tfptS10, tfptS11, tfptS12, tfptS13));
@@ -780,6 +810,7 @@ public class RecebeNotas extends JFrame {
 				textField_PT_LOGICA.setText(fazer.calculaNotaTotalLogica(tfptS11, tfptS12, tfptS13, tfptS14, tfptS15, tfptS16, tfptS17, tfptS18, tfptS19));
 			}
 		});
+		
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		addWindowListener(new WindowAdapter(){
 			public void windowClosing(WindowEvent e) {
