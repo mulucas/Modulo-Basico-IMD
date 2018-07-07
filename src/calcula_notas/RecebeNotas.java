@@ -51,17 +51,8 @@ public class RecebeNotas extends JFrame {
 	private JTextField tfptS4;
 	private JTextField tfptS3;
 	private JTextField tfptS2;
-	private JLabel lblDisciplinas;
-	private JLabel lblIngls;
-	private JLabel lblMatematica;
-	private JLabel lblTecnologiaDaInformao;
-	private JLabel lblLogDeProgramao;
-	private JLabel lblSisOperacionais;
-	private JLabel lblArqDeComputadores;
-	private JLabel lblAe;
-	private JLabel lblPt;
-	private JLabel lblPe;
-	private JLabel lblPen;
+	private JLabel lblDisciplinas, lblIngls, lblMatematica,lblTecnologiaDaInformao, lblLogDeProgramao, lblSisOperacionais, lblArqDeComputadores;
+	private JLabel lblAe, lblPt, lblPe, lblPen;
 	private JTextField textField_AE_ingles, textField_AE_mat, textField_AE_TEC_INF, textField_AE_LOGICA, textField_AE_SISTEMAS, textField_AE_ARQ;
 	private JTextField textField_PT_ingles, textField_PT_mat, textField_PT_TEC_INF, textField_PT_LOGICA, textField_PT_SISTEMAS, textField_PT_ARQ;
 	private JTextField textField_PE_ingles,textField_PE_mat, textField_PE_TEC_INF, textField_PE_LOGICA, textField_PE_SISTEMAS, textField_PE_ARQ; 
@@ -80,8 +71,7 @@ public class RecebeNotas extends JFrame {
 				}
 			}
 		});
-	}	
-	
+	}		
 	public RecebeNotas() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 741, 460);
@@ -705,6 +695,21 @@ public class RecebeNotas extends JFrame {
 		JButton btnCalcularPt = new JButton("CALCULAR P.T");
 		btnCalcularPt.setBounds(240, 131, 120, 25);
 		panel.add(btnCalcularPt);
+		
+		JLabel lblAcimaDaMdia = new JLabel("Acima da M\u00E9dia");
+		lblAcimaDaMdia.setForeground(Color.BLACK);
+		lblAcimaDaMdia.setBounds(595, 358, 90, 14);
+		lblAcimaDaMdia.setOpaque(true);
+		lblAcimaDaMdia.setBackground(Color.GREEN);
+		contentPane.add(lblAcimaDaMdia);
+		
+		JLabel lblAbaixoDaMdia = new JLabel("Abaixo da M\u00E9dia");
+		lblAbaixoDaMdia.setForeground(Color.BLACK);
+		lblAbaixoDaMdia.setBounds(595, 378, 100, 14);
+		lblAbaixoDaMdia.setOpaque(true);
+		lblAbaixoDaMdia.setBackground(Color.RED);
+		contentPane.add(lblAbaixoDaMdia);
+		
 		btnCalcularPt.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

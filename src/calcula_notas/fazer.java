@@ -5,8 +5,6 @@ import java.awt.Component;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.text.DecimalFormat;
-
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -47,8 +45,8 @@ public class fazer {
 		Double.parseDouble(a6.getText())+Double.parseDouble(a7.getText())+Double.parseDouble(a8.getText())+
 		Double.parseDouble(a9.getText())+Double.parseDouble(a10.getText());
 		calc = calc/10;
-		df.format(calc);
-		String resultadoEmTexto = ""+calc;
+		//df.format(calc);
+		String resultadoEmTexto = String.format("%.1f", calc);
 		return resultadoEmTexto;
 	}
 	
@@ -59,19 +57,19 @@ public class fazer {
 		Double.parseDouble(a6.getText())+Double.parseDouble(a7.getText())+Double.parseDouble(a8.getText())+
 		Double.parseDouble(a9.getText())+Double.parseDouble(a10.getText());
 		calc = calc/10;
-		df.format(calc);
-		String resultadoEmTexto = ""+calc;
+		//df.format(calc);
+		String resultadoEmTexto = String.format("%.1f", calc);
 		return resultadoEmTexto;
 	}
 	
 	public String calculaNotaTotalLogica(JTextField a1,JTextField a2,JTextField a3,JTextField a4,JTextField a5,
 			JTextField a6,JTextField a7,JTextField a8,JTextField a9) {
-		double calc= Double.parseDouble(a1.getText()) + Double.parseDouble(a2.getText())+
+		double calc= Double.parseDouble(a1.getText())+Double.parseDouble(a2.getText())+
 		Double.parseDouble(a3.getText())+Double.parseDouble(a4.getText())+Double.parseDouble(a5.getText())+
-		Double.parseDouble(a6.getText())+Double.parseDouble(a7.getText())+Double.parseDouble(a8.getText()+Double.parseDouble(a9.getText()));
+		Double.parseDouble(a6.getText())+Double.parseDouble(a7.getText())+Double.parseDouble(a8.getText())+Double.parseDouble(a9.getText());
 		calc = calc/9;
-		df.format(calc);
-		String resultadoEmTexto = ""+calc;
+		//df.format(calc);
+		String resultadoEmTexto = String.format("%.1f", calc);
 		return resultadoEmTexto;
 	}
 	
@@ -79,10 +77,10 @@ public class fazer {
 			JTextField a6,JTextField a7,JTextField a8,JTextField a9) {
 		double calc= Double.parseDouble(a1.getText()) + Double.parseDouble(a2.getText())+
 		Double.parseDouble(a3.getText())+Double.parseDouble(a4.getText())+Double.parseDouble(a5.getText())+
-		Double.parseDouble(a6.getText())+Double.parseDouble(a7.getText())+Double.parseDouble(a8.getText()+Double.parseDouble(a9.getText()));
+		Double.parseDouble(a6.getText())+Double.parseDouble(a7.getText())+Double.parseDouble(a8.getText())+Double.parseDouble(a9.getText());
 		calc = calc/9;
-		df.format(calc);
-		String resultadoEmTexto = ""+calc;
+		//df.format(calc);
+		String resultadoEmTexto = String.format("%.1f", calc);
 		return resultadoEmTexto;
 	}
 
@@ -90,8 +88,8 @@ public class fazer {
 		double calc= Double.parseDouble(a1.getText()) + Double.parseDouble(a2.getText())+
 		Double.parseDouble(a3.getText())+Double.parseDouble(a4.getText())+Double.parseDouble(a5.getText());
 		calc = calc/5;
-		df.format(calc);
-		String resultadoEmTexto = ""+calc;
+		//df.format(calc);
+		String resultadoEmTexto = String.format("%.1f", calc);
 		return resultadoEmTexto;
 	}
 	
@@ -101,8 +99,8 @@ public class fazer {
 		Double.parseDouble(a3.getText())+Double.parseDouble(a4.getText())+Double.parseDouble(a5.getText())+
 		Double.parseDouble(a6.getText())+Double.parseDouble(a7.getText())+Double.parseDouble(a8.getText());
 		calc = calc/8;
-		df.format(calc);
-		String resultadoEmTexto = ""+calc;
+		//df.format(calc);
+		String resultadoEmTexto = String.format("%.1f", calc);
 		return resultadoEmTexto;
 	}
 	
