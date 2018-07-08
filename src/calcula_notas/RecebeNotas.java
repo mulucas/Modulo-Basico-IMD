@@ -6,7 +6,7 @@ import java.awt.Color;
 import javax.swing.*;
 import java.awt.Font;
 import java.awt.event.*;
-import java.text.DecimalFormat;
+import java.io.PrintWriter;
 
 public class RecebeNotas extends JFrame {
 
@@ -14,12 +14,24 @@ public class RecebeNotas extends JFrame {
 	private JTextField tfS1_pp, tfS2_pp, tfS3_pp, tfS4_pp, tfS5_pp, tfS6_pp, tfS7_pp, 
 	tfS8_pp, tfS9_pp, tfS10_pp, tfS11_pp, tfS12_pp, tfS13_pp, tfS14_pp, tfS15_pp, tfS16_pp, tfS17_pp, tfS18_pp, tfS19_pp;
 	private JTextField tfptS1;
+	private JTextField tfptS8;
+	private JTextField tfptS7;
+	private JTextField tfptS6;
+	private JTextField tfptS5;
+	private JTextField tfptS4;
+	private JTextField tfptS3;
+	private JTextField tfptS2;
+	private JTextField tfptS9;
+	private JTextField tfptS10;
+	private JTextField tfptS11;
+	private JTextField tfptS12;
+	private JTextField tfptS13;
+	private JTextField tfptS17;
 	private JTextField tfptS19;
 	private JTextField tfpvtS18;
 	private JTextField tfpvtS1;
 	private JTextField tfptS18;
 	private JTextField tfpvtS17;
-	private JTextField tfptS17;
 	private JTextField tfpvtS16;
 	private JTextField tfptS16;
 	private JTextField tfpvtS15;
@@ -39,18 +51,6 @@ public class RecebeNotas extends JFrame {
 	private JTextField tfpvtS10;
 	private JTextField tfpvtS11;
 	private JTextField tfpvtS12;
-	private JTextField tfptS13;
-	private JTextField tfptS12;
-	private JTextField tfptS11;
-	private JTextField tfptS10;
-	private JTextField tfptS9;
-	private JTextField tfptS8;
-	private JTextField tfptS7;
-	private JTextField tfptS6;
-	private JTextField tfptS5;
-	private JTextField tfptS4;
-	private JTextField tfptS3;
-	private JTextField tfptS2;
 	private JLabel lblDisciplinas, lblIngls, lblMatematica,lblTecnologiaDaInformao, lblLogDeProgramao, lblSisOperacionais, lblArqDeComputadores;
 	private JLabel lblAe, lblPt, lblPe, lblPen;
 	private JTextField textField_AE_ingles, textField_AE_mat, textField_AE_TEC_INF, textField_AE_LOGICA, textField_AE_SISTEMAS, textField_AE_ARQ;
@@ -73,6 +73,7 @@ public class RecebeNotas extends JFrame {
 			}
 		});
 	}		
+	
 	public RecebeNotas() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 714, 460);
@@ -104,12 +105,12 @@ public class RecebeNotas extends JFrame {
 		lblNewLabel_3.setBounds(10, 100, 46, 14);
 		panel.add(lblNewLabel_3);		
 		//-------------------------SEMANA--01-------------------------------------------------
-		tfS1_pp = new JTextField();		
+		tfS1_pp = new JTextField("0");		
 		tfS1_pp.setBounds(66, 60, 27, 17);
 		panel.add(tfS1_pp);
 		tfS1_pp.setColumns(10);
 		
-		tfpvtS1 = new JTextField();
+		tfpvtS1 = new JTextField("0");
 		tfpvtS1.setColumns(10);
 		tfpvtS1.setBounds(66, 80, 27, 17);
 		panel.add(tfpvtS1);
@@ -120,12 +121,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS1);
 		tfptS1.setEnabled(false);	
 		//--------------------------SEMANA--02------------------------------------------------
-		tfS2_pp = new JTextField();
+		tfS2_pp = new JTextField("0");
 		tfS2_pp.setColumns(10);
 		tfS2_pp.setBounds(99, 60, 27, 17);
 		panel.add(tfS2_pp);
 		
-		tfpvtS2 = new JTextField();
+		tfpvtS2 = new JTextField("0");
 		tfpvtS2.setColumns(10);
 		tfpvtS2.setBounds(99, 80, 27, 17);
 		panel.add(tfpvtS2);
@@ -136,12 +137,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS2);
 		tfptS2.setEnabled(false);
 		//--------------------------SEMANA--03------------------------------------------------
-		tfS3_pp = new JTextField();
+		tfS3_pp = new JTextField("0");
 		tfS3_pp.setColumns(10);
 		tfS3_pp.setBounds(133, 60, 27, 17);
 		panel.add(tfS3_pp);
 		
-		tfpvtS3 = new JTextField();
+		tfpvtS3 = new JTextField("0");
 		tfpvtS3.setColumns(10);
 		tfpvtS3.setBounds(133, 80, 27, 17);
 		panel.add(tfpvtS3);
@@ -152,12 +153,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS3);
 		tfptS3.setEnabled(false);
 		//----------------------------SEMANA--04------------------------------------------------
-		tfS4_pp = new JTextField();
+		tfS4_pp = new JTextField("0");
 		tfS4_pp.setColumns(10);
 		tfS4_pp.setBounds(166, 60, 27, 17);
 		panel.add(tfS4_pp);
 		
-		tfpvtS4 = new JTextField();
+		tfpvtS4 = new JTextField("0");
 		tfpvtS4.setColumns(10);
 		tfpvtS4.setBounds(166, 80, 27, 17);
 		panel.add(tfpvtS4);
@@ -168,12 +169,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS4);
 		tfptS4.setEnabled(false);
 		//--------------------------SEMANA--05------------------------------------------------
-		tfS5_pp = new JTextField();
+		tfS5_pp = new JTextField("0");
 		tfS5_pp.setColumns(10);
 		tfS5_pp.setBounds(199, 60, 27, 17);
 		panel.add(tfS5_pp);
 		
-		tfpvtS5 = new JTextField();
+		tfpvtS5 = new JTextField("0");
 		tfpvtS5.setColumns(10);
 		tfpvtS5.setBounds(199, 80, 27, 17);
 		panel.add(tfpvtS5);
@@ -184,12 +185,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS5);
 		tfptS5.setEnabled(false);
 		//----------------------------SEMANA--06----------------------------------------------
-		tfS6_pp = new JTextField();
+		tfS6_pp = new JTextField("0");
 		tfS6_pp.setColumns(10);
 		tfS6_pp.setBounds(232, 60, 27, 17);
 		panel.add(tfS6_pp);
 		
-		tfpvtS6 = new JTextField();
+		tfpvtS6 = new JTextField("0");
 		tfpvtS6.setColumns(10);
 		tfpvtS6.setBounds(232, 80, 27, 17);
 		panel.add(tfpvtS6);
@@ -200,12 +201,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS6);
 		tfptS6.setEnabled(false);
 		//-----------------------------SEMANA--07---------------------------------------------
-		tfS7_pp = new JTextField();
+		tfS7_pp = new JTextField("0");
 		tfS7_pp.setColumns(10);
 		tfS7_pp.setBounds(265, 60, 27, 17);
 		panel.add(tfS7_pp);
 		
-		tfpvtS7 = new JTextField();
+		tfpvtS7 = new JTextField("0");
 		tfpvtS7.setColumns(10);
 		tfpvtS7.setBounds(265, 80, 27, 17);
 		panel.add(tfpvtS7);
@@ -216,12 +217,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS7);
 		tfptS7.setEnabled(false);
 		//-----------------------------SEMANA--08---------------------------------------------
-		tfS8_pp = new JTextField();
+		tfS8_pp = new JTextField("0");
 		tfS8_pp.setColumns(10);
 		tfS8_pp.setBounds(297, 60, 27, 17);
 		panel.add(tfS8_pp);
 		
-		tfpvtS8 = new JTextField();
+		tfpvtS8 = new JTextField("0");
 		tfpvtS8.setColumns(10);
 		tfpvtS8.setBounds(297, 80, 27, 17);
 		panel.add(tfpvtS8);
@@ -232,12 +233,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS8);
 		tfptS8.setEnabled(false);
 		//----------------------------SEMANA--09----------------------------------------------
-		tfS9_pp = new JTextField();
+		tfS9_pp = new JTextField("0");
 		tfS9_pp.setColumns(10);
 		tfS9_pp.setBounds(328, 60, 27, 17);
 		panel.add(tfS9_pp);
 		
-		tfpvtS9 = new JTextField();
+		tfpvtS9 = new JTextField("0");
 		tfpvtS9.setColumns(10);
 		tfpvtS9.setBounds(328, 80, 27, 17);
 		panel.add(tfpvtS9);
@@ -248,12 +249,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS9);
 		tfptS9.setEnabled(false);
 		//---------------------------SEMANA--10-----------------------------------------------
-		tfS10_pp = new JTextField();
+		tfS10_pp = new JTextField("0");
 		tfS10_pp.setColumns(10);
 		tfS10_pp.setBounds(362, 60, 27, 17);
 		panel.add(tfS10_pp);
 		
-		tfpvtS10 = new JTextField();
+		tfpvtS10 = new JTextField("0");
 		tfpvtS10.setColumns(10);
 		tfpvtS10.setBounds(362, 80, 27, 17);
 		panel.add(tfpvtS10);
@@ -264,12 +265,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS10);
 		tfptS10.setEnabled(false);
 		//-----------------------------SEMANA--11---------------------------------------------
-		tfS11_pp = new JTextField();
+		tfS11_pp = new JTextField("0");
 		tfS11_pp.setColumns(10);
 		tfS11_pp.setBounds(394, 60, 27, 17);
 		panel.add(tfS11_pp);
 		
-		tfpvtS11 = new JTextField();
+		tfpvtS11 = new JTextField("0");
 		tfpvtS11.setColumns(10);
 		tfpvtS11.setBounds(394, 80, 27, 17);
 		panel.add(tfpvtS11);
@@ -280,12 +281,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS11);
 		tfptS11.setEnabled(false);
 		//-----------------------------SEMANA--12---------------------------------------------
-		tfS12_pp = new JTextField();
+		tfS12_pp = new JTextField("0");
 		tfS12_pp.setColumns(10);
 		tfS12_pp.setBounds(428, 60, 27, 17);
 		panel.add(tfS12_pp);
 		
-		tfpvtS12 = new JTextField();
+		tfpvtS12 = new JTextField("0");
 		tfpvtS12.setColumns(10);
 		tfpvtS12.setBounds(428, 80, 27, 17);
 		panel.add(tfpvtS12);
@@ -296,12 +297,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS12);
 		tfptS12.setEnabled(false);
 		//-----------------------------SEMANA--13---------------------------------------------
-		tfS13_pp = new JTextField();
+		tfS13_pp = new JTextField("0");
 		tfS13_pp.setColumns(10);
 		tfS13_pp.setBounds(462, 60, 27, 17);
 		panel.add(tfS13_pp);	
 
-		tfpvtS13 = new JTextField();
+		tfpvtS13 = new JTextField("0");
 		tfpvtS13.setColumns(10);
 		tfpvtS13.setBounds(462, 80, 27, 17);
 		panel.add(tfpvtS13);
@@ -312,12 +313,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS13);
 		tfptS13.setEnabled(false);
 		//-----------------------------SEMANA--14---------------------------------------------
-		tfS14_pp = new JTextField();
+		tfS14_pp = new JTextField("0");
 		tfS14_pp.setColumns(10);
 		tfS14_pp.setBounds(496, 60, 27, 17);
 		panel.add(tfS14_pp);
 		
-		tfpvtS14 = new JTextField();
+		tfpvtS14 = new JTextField("0");
 		tfpvtS14.setColumns(10);
 		tfpvtS14.setBounds(496, 80, 27, 17);
 		panel.add(tfpvtS14);
@@ -328,12 +329,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS14);
 		tfptS14.setEnabled(false);
 		//----------------------------SEMANA--15-----------------------------------------------
-		tfS15_pp = new JTextField();
+		tfS15_pp = new JTextField("0");
 		tfS15_pp.setColumns(10);
 		tfS15_pp.setBounds(530, 60, 27, 17);
 		panel.add(tfS15_pp);
 		
-		tfpvtS15 = new JTextField();
+		tfpvtS15 = new JTextField("0");
 		tfpvtS15.setColumns(10);
 		tfpvtS15.setBounds(530, 80, 27, 17);
 		panel.add(tfpvtS15);
@@ -344,12 +345,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS15);
 		tfptS15.setEnabled(false);
 		//---------------------------SEMANA--16------------------------------------------------
-		tfS16_pp = new JTextField();
+		tfS16_pp = new JTextField("0");
 		tfS16_pp.setColumns(10);
 		tfS16_pp.setBounds(563, 60, 27, 17);
 		panel.add(tfS16_pp);
 		
-		tfpvtS16 = new JTextField();
+		tfpvtS16 = new JTextField("0");
 		tfpvtS16.setColumns(10);
 		tfpvtS16.setBounds(563, 80, 27, 17);
 		panel.add(tfpvtS16);
@@ -360,12 +361,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS16);
 		tfptS16.setEnabled(false);
 		//-------------------------SEMANA--17--------------------------------------------------
-		tfS17_pp = new JTextField();
+		tfS17_pp = new JTextField("0");
 		tfS17_pp.setColumns(10);
 		tfS17_pp.setBounds(598, 60, 27, 17);
 		panel.add(tfS17_pp);
 		
-		tfpvtS17 = new JTextField();
+		tfpvtS17 = new JTextField("0");
 		tfpvtS17.setColumns(10);
 		tfpvtS17.setBounds(598, 80, 27, 17);
 		panel.add(tfpvtS17);
@@ -376,12 +377,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS17);
 		tfptS17.setEnabled(false);
 		//--------------------------SEMANA--18-----------------------------------------------
-		tfS18_pp = new JTextField();
+		tfS18_pp = new JTextField("0");
 		tfS18_pp.setColumns(10);
 		tfS18_pp.setBounds(630, 60, 27, 17);
 		panel.add(tfS18_pp);
 		
-		tfpvtS18 = new JTextField();
+		tfpvtS18 = new JTextField("0");
 		tfpvtS18.setColumns(10);
 		tfpvtS18.setBounds(630, 80, 27, 17);
 		panel.add(tfpvtS18);
@@ -392,12 +393,12 @@ public class RecebeNotas extends JFrame {
 		panel.add(tfptS18);
 		tfptS18.setEnabled(false);
 		//-------------------------SEMANA--19-----------------------------------------------
-		tfS19_pp = new JTextField();
+		tfS19_pp = new JTextField("0");
 		tfS19_pp.setColumns(10);
 		tfS19_pp.setBounds(664, 60, 27, 17);
 		panel.add(tfS19_pp);
 		
-		tfpvtS19 = new JTextField();
+		tfpvtS19 = new JTextField("0");
 		tfpvtS19.setColumns(10);
 		tfpvtS19.setBounds(664, 80, 27, 17);
 		panel.add(tfpvtS19);
@@ -484,7 +485,7 @@ public class RecebeNotas extends JFrame {
 		lblS_18.setBounds(664, 40, 27, 14);
 		panel.add(lblS_18);
 		
-		//-----------------------selecionando todo conteudo sozinho------------------------------------
+		//-----------------------selecionando todo conteudo sozinho----NOTAS-SEMANAIS------------------------------
 		fazer.selecionaTodoConteudo(tfS1_pp,tfpvtS1);
 		fazer.selecionaTodoConteudo(tfS2_pp,tfpvtS2);
 		fazer.selecionaTodoConteudo(tfS3_pp,tfpvtS3);
@@ -504,7 +505,7 @@ public class RecebeNotas extends JFrame {
 		fazer.selecionaTodoConteudo(tfS17_pp,tfpvtS17);
 		fazer.selecionaTodoConteudo(tfS18_pp,tfpvtS18);
 		fazer.selecionaTodoConteudo(tfS19_pp,tfpvtS19);	
-		
+						
 		//---------------------------------------------------------------------------------------
 		JLabel lblNotasSemanais = new JLabel("NOTAS SEMANAIS");
 		lblNotasSemanais.setFont(new Font("Arial Black", Font.PLAIN, 15));
@@ -679,7 +680,33 @@ public class RecebeNotas extends JFrame {
 		final_ARQ.setColumns(10);
 		final_ARQ.setBounds(254, 312, 27, 17);
 		contentPane.add(final_ARQ);
+		
+		//--------------------------------------------------------------------------------------------------------------
+		textField_PT_ingles.setEnabled(false);
+		textField_PT_ARQ.setEnabled(false);
+		textField_PT_LOGICA.setEnabled(false);
+		textField_PT_SISTEMAS.setEnabled(false);
+		textField_PT_TEC_INF.setEnabled(false);
+		textField_PT_mat.setEnabled(false);
+		
+		textField_PT_ingles.setDisabledTextColor(Color.BLACK);
+		textField_PT_ARQ.setDisabledTextColor(Color.BLACK);
+		textField_PT_LOGICA.setDisabledTextColor(Color.BLACK);
+		textField_PT_SISTEMAS.setDisabledTextColor(Color.BLACK);
+		textField_PT_TEC_INF.setDisabledTextColor(Color.BLACK);
+		textField_PT_mat.setDisabledTextColor(Color.BLACK);
 				
+		//-------------------------------SELECIONA-CONTEUDO---------DEMAIS-NOTAS------------------------------
+		
+		fazer.selecionaTodoConteudo(textField_AE_ARQ, textField_PE_ARQ);
+		fazer.selecionaTodoConteudo(textField_AE_ingles, textField_PE_ingles);
+		fazer.selecionaTodoConteudo(textField_AE_LOGICA, textField_PE_LOGICA);
+		fazer.selecionaTodoConteudo(textField_AE_SISTEMAS, textField_PE_SISTEMAS);
+		fazer.selecionaTodoConteudo(textField_AE_mat, textField_PE_mat);
+		fazer.selecionaTodoConteudo(textField_AE_TEC_INF, textField_PE_TEC_INF);
+		
+		//----------------------------------------------------------------------------------------------------
+		
 		JButton btnLimparTudo = new JButton("LIMPAR TUDO");
 		btnLimparTudo.setBounds(370, 131, 120, 25);
 		panel.add(btnLimparTudo);
@@ -706,7 +733,7 @@ public class RecebeNotas extends JFrame {
 		lblAbaixoDaMdia.setForeground(Color.BLACK);
 		lblAbaixoDaMdia.setBounds(595, 378, 100, 14);
 		lblAbaixoDaMdia.setOpaque(true);
-		lblAbaixoDaMdia.setBackground(Color.RED);
+		lblAbaixoDaMdia.setBackground(new Color(255, 77, 77));
 		contentPane.add(lblAbaixoDaMdia);
 		
 		JButton btnCalcularPt = new JButton("CALCULAR P.T");
@@ -725,6 +752,7 @@ public class RecebeNotas extends JFrame {
 		tffinalModulo.setBounds(141, 353, 46, 17);
 		contentPane.add(tffinalModulo);
 		tffinalModulo.setColumns(10);
+		tffinalModulo.setDisabledTextColor(Color.BLACK);
 		
 		btnCalcularModulo.addActionListener(new ActionListener() {		
 			@Override
@@ -746,7 +774,7 @@ public class RecebeNotas extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//----------------------SEMANA-1-----------------------------
 				tfptS1.setText(fazer.calculaNotasSemanais(tfpvtS1, tfS1_pp));
-				fazer.mudaCor(tfptS1.getText(), tfptS1);
+				fazer.mudaCor(tfptS1.getText(), tfptS1);				
 				//----------------------SEMANA-2------------------------------
 				tfptS2.setText(fazer.calculaNotasSemanais(tfpvtS2, tfS2_pp));
 				fazer.mudaCor(tfptS2.getText(), tfptS2);
@@ -801,7 +829,8 @@ public class RecebeNotas extends JFrame {
 				//--------------------SEMANA-19--------------------------------
 				tfptS19.setText(fazer.calculaNotasSemanais(tfpvtS19, tfS19_pp));
 				fazer.mudaCor(tfptS19.getText(), tfptS19);
-							
+				
+									
 				textField_PT_ingles.setText(fazer.calculaNotaTotalIngles(tfptS1, tfptS2, tfptS3, tfptS4, tfptS5, tfptS6, tfptS7, tfptS8, tfptS9, tfptS10));
 				textField_PT_mat.setText(fazer.calculaNotaTotalMatematica(tfptS1, tfptS2, tfptS3, tfptS4, tfptS5, tfptS6, tfptS7, tfptS8, tfptS9, tfptS10));
 				textField_PT_ARQ.setText(fazer.calculaNotaTotalARQUITETURA(tfptS9, tfptS10, tfptS11, tfptS12, tfptS13));

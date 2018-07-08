@@ -5,7 +5,6 @@ import java.awt.Component;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.Locale;
 
 import javax.swing.JPanel;
@@ -28,7 +27,7 @@ public class fazer {
 			v.setBackground(new Color(255, 255, 255));
 		}
 		else {
-			v.setBackground(new Color(255, 0, 0));
+			v.setBackground(new Color(255, 77, 77));
 		}
 	}
 	
