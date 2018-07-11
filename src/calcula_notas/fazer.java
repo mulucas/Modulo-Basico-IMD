@@ -1,24 +1,19 @@
 package calcula_notas;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
-import java.text.DecimalFormat;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Locale;
 
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class fazer {
+public class Fazer {
 	double num1,num2,resultado;
-	DecimalFormat df = new DecimalFormat("#.#");
 
-	public void mudaCor(String x, JTextField v) {
-		String entradaMat = v.getText();
-		double c = Double.parseDouble(entradaMat.replace(',', '.'));
-		
-		//double c = Double.parseDouble(x);
+	public void mudaCor(double c, JTextField v) {
 		v.setDisabledTextColor(Color.BLACK);
 		if (c>=5&&c<=10) {
 			v.setBackground(new Color(0, 255, 0));
@@ -31,6 +26,77 @@ public class fazer {
 		}
 	}
 	
+	public void salvarpts(JTextField[] campos) throws IOException{
+		FileWriter cria = new FileWriter("pts.txt");
+		BufferedWriter gravarArq = new BufferedWriter(cria);
+		for( int i=0; i < campos.length; i++){
+			String valor = campos[i].getText();
+			gravarArq.write(valor);
+			gravarArq.newLine();
+		} 
+		gravarArq.close();
+		cria.close();
+	}
+	
+	public void salvarpp(JTextField[] campos) throws IOException{
+		FileWriter cria = new FileWriter("pp.txt");
+		BufferedWriter gravarArq = new BufferedWriter(cria);
+		for( int i=0; i < campos.length; i++){
+			String valor = campos[i].getText();
+			gravarArq.write(valor);
+			gravarArq.newLine();
+		} 
+		gravarArq.close();
+		cria.close();
+	}
+	
+	public void salvarae(JTextField[] campos) throws IOException{
+		FileWriter cria = new FileWriter("ae.txt");
+		BufferedWriter gravarArq = new BufferedWriter(cria);
+		for( int i=0; i < campos.length; i++){
+			String valor = campos[i].getText();
+			gravarArq.write(valor);
+			gravarArq.newLine();
+		} 
+		gravarArq.close();
+		cria.close();
+	}
+	public void salvarpe(JTextField[] campos) throws IOException{
+		FileWriter cria = new FileWriter("pe.txt");
+		BufferedWriter gravarArq = new BufferedWriter(cria);
+		for( int i=0; i < campos.length; i++){
+			String valor = campos[i].getText();
+			gravarArq.write(valor);
+			gravarArq.newLine();
+		} 
+		gravarArq.close();
+		cria.close();
+	}
+	
+	public void salvarpvt(JTextField[] campos) throws IOException{
+		FileWriter cria = new FileWriter("pvt.txt");
+		BufferedWriter gravarArq = new BufferedWriter(cria);
+		for( int i=0; i < campos.length; i++){
+			String valor = campos[i].getText();
+			gravarArq.write(valor);
+			gravarArq.newLine();
+		} 
+		gravarArq.close();
+		cria.close();
+	}
+	
+	public void salvarpt(JTextField[] campos) throws IOException{
+		FileWriter cria = new FileWriter("pt.txt");
+		BufferedWriter gravarArq = new BufferedWriter(cria);
+		for( int i=0; i < campos.length; i++){
+			String valor = campos[i].getText();
+			gravarArq.write(valor);
+			gravarArq.newLine();
+		} 
+		gravarArq.close();
+		cria.close();
+	}
+	
 	public String calculaFinalIngles(JTextField x, JTextField y, JTextField prova) {
 		
 		String entradaX = x.getText();
@@ -39,10 +105,6 @@ public class fazer {
 		double valorY = Double.parseDouble(entradaY.replace(',', '.'));
 		String entradaProva = prova.getText();
 		double valorProva = Double.parseDouble(entradaProva.replace(',', '.'));
-				
-		/*double num = Double.parseDouble(x.getText());  											
-		double numn = Double.parseDouble(y.getText());
-		double provaD = Double.parseDouble(prova.getText());*/
 		
 		double result = (valorX + valorY+(2*valorProva))/4;
 		String resultadoEmTexto = String.format("%.1f", result);
@@ -76,10 +138,6 @@ public class fazer {
 		double valorY = Double.parseDouble(entradaY.replace(',', '.'));
 		String entradaProva = prova.getText();
 		double valorProva = Double.parseDouble(entradaProva.replace(',', '.'));
-				
-		/*double num = Double.parseDouble(x.getText());  											
-		double numn = Double.parseDouble(y.getText());
-		double provaD = Double.parseDouble(prova.getText());*/
 		
 		double result = (valorX + valorY+(2*valorProva))/4;
 		String resultadoEmTexto = String.format("%.1f", result);
@@ -94,10 +152,6 @@ public class fazer {
 		double valorY = Double.parseDouble(entradaY.replace(',', '.'));
 		String entradaProva = prova.getText();
 		double valorProva = Double.parseDouble(entradaProva.replace(',', '.'));
-				
-		/*double num = Double.parseDouble(x.getText());  											
-		double numn = Double.parseDouble(y.getText());
-		double provaD = Double.parseDouble(prova.getText());*/
 		
 		double result = (valorX + valorY+(2*valorProva))/4;
 		String resultadoEmTexto = String.format("%.1f", result);
@@ -113,10 +167,6 @@ public class fazer {
 		String entradaProva = prova.getText();
 		double valorProva = Double.parseDouble(entradaProva.replace(',', '.'));
 				
-		/*double num = Double.parseDouble(x.getText());  											
-		double numn = Double.parseDouble(y.getText());
-		double provaD = Double.parseDouble(prova.getText());*/
-		
 		double result = (valorX + valorY+(2*valorProva))/4;
 		String resultadoEmTexto = String.format("%.1f", result);
 		return resultadoEmTexto;
@@ -130,10 +180,6 @@ public class fazer {
 		String entradaProva = prova.getText();
 		double valorProva = Double.parseDouble(entradaProva.replace(',', '.'));
 				
-		/*double num = Double.parseDouble(x.getText());  											
-		double numn = Double.parseDouble(y.getText());
-		double provaD = Double.parseDouble(prova.getText());*/
-		
 		double result = (valorX + valorY+(2*valorProva))/4;
 		String resultadoEmTexto = String.format("%.1f", result);
 		return resultadoEmTexto;
@@ -146,10 +192,6 @@ public class fazer {
 		double valorY = Double.parseDouble(entradaY.replace(',', '.'));
 		String entradaProva = prova.getText();
 		double valorProva = Double.parseDouble(entradaProva.replace(',', '.'));
-				
-		/*double num = Double.parseDouble(x.getText());  											
-		double numn = Double.parseDouble(y.getText());
-		double provaD = Double.parseDouble(prova.getText());*/
 		
 		double result = (valorX + valorY+(2*valorProva))/4;
 		String resultadoEmTexto = String.format("%.1f", result);
@@ -164,15 +206,13 @@ public class fazer {
 			double valorX = Double.parseDouble(entradaX.replace(',', '.'));
 			String entradaY = y.getText();
 			double valorY = Double.parseDouble(entradaY.replace(',', '.'));
-			//num1 = Double.parseDouble(entrada); 
-			//num2 = Double.parseDouble(entrada1); 			
 			resultado = (valorX + valorY)/2;
 			resultado = Double.valueOf(String.format(Locale.US, "%.1f", resultado));
 			String resultadoEmTexto = ""+resultado;
 			return resultadoEmTexto;			
 		}
 	}
-	
+		
 	public String calculaNotaTotalIngles(JTextField a1,JTextField a2,JTextField a3,JTextField a4,JTextField a5,
 			JTextField a6,JTextField a7,JTextField a8,JTextField a9,JTextField a10) {
 		double calc= Double.parseDouble(a1.getText()) + Double.parseDouble(a2.getText())+
@@ -180,7 +220,6 @@ public class fazer {
 		Double.parseDouble(a6.getText())+Double.parseDouble(a7.getText())+Double.parseDouble(a8.getText())+
 		Double.parseDouble(a9.getText())+Double.parseDouble(a10.getText());
 		calc = calc/10;
-		//df.format(calc);
 		String resultadoEmTexto = String.format("%.1f", calc);
 		return resultadoEmTexto;
 	}
@@ -192,7 +231,6 @@ public class fazer {
 		Double.parseDouble(a6.getText())+Double.parseDouble(a7.getText())+Double.parseDouble(a8.getText())+
 		Double.parseDouble(a9.getText())+Double.parseDouble(a10.getText());
 		calc = calc/10;
-		//df.format(calc);
 		String resultadoEmTexto = String.format("%.1f", calc);
 		return resultadoEmTexto;
 	}
@@ -203,7 +241,6 @@ public class fazer {
 		Double.parseDouble(a3.getText())+Double.parseDouble(a4.getText())+Double.parseDouble(a5.getText())+
 		Double.parseDouble(a6.getText())+Double.parseDouble(a7.getText())+Double.parseDouble(a8.getText())+Double.parseDouble(a9.getText());
 		calc = calc/9;
-		//df.format(calc);
 		String resultadoEmTexto = String.format("%.1f", calc);
 		return resultadoEmTexto;
 	}
@@ -214,7 +251,6 @@ public class fazer {
 		Double.parseDouble(a3.getText())+Double.parseDouble(a4.getText())+Double.parseDouble(a5.getText())+
 		Double.parseDouble(a6.getText())+Double.parseDouble(a7.getText())+Double.parseDouble(a8.getText())+Double.parseDouble(a9.getText());
 		calc = calc/9;
-		//df.format(calc);
 		String resultadoEmTexto = String.format("%.1f", calc);
 		return resultadoEmTexto;
 	}
@@ -223,7 +259,6 @@ public class fazer {
 		double calc= Double.parseDouble(a1.getText()) + Double.parseDouble(a2.getText())+
 		Double.parseDouble(a3.getText())+Double.parseDouble(a4.getText())+Double.parseDouble(a5.getText());
 		calc = calc/5;
-		//df.format(calc);
 		String resultadoEmTexto = String.format("%.1f", calc);
 		return resultadoEmTexto;
 	}
@@ -234,7 +269,6 @@ public class fazer {
 		Double.parseDouble(a3.getText())+Double.parseDouble(a4.getText())+Double.parseDouble(a5.getText())+
 		Double.parseDouble(a6.getText())+Double.parseDouble(a7.getText())+Double.parseDouble(a8.getText());
 		calc = calc/8;
-		//df.format(calc);
 		String resultadoEmTexto = String.format("%.1f", calc);
 		return resultadoEmTexto;
 	}
@@ -256,21 +290,13 @@ public class fazer {
 		        x.selectAll();
 			}
 		}); 
-		/*principal.addFocusListener(new FocusAdapter() {
-			public void focusGained(FocusEvent e) {	
-				mudaCor(realizaCalculo(x, y), principal);
-				String r =String.valueOf(realizaCalculo(x, y));
-				principal.setEnabled(false);
-				principal.setText(r);										
-			}
-		});		*/
 	}
 
 	public void limparCampos(JPanel container)	{
 	    Component components[] = container.getComponents();
 	    for (Component component : components){
 	        if (component instanceof JTextField){
-	            ((JTextField)component).setText(null);
+	            ((JTextField)component).setText("0");
 	            ((JTextField)component).setBackground(new Color(255, 255, 255));
 	        }
 	    }
