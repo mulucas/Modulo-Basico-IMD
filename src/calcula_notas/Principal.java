@@ -145,9 +145,6 @@ public class Principal extends JFrame implements ActionListener {
 		}
 		try {
 			int i = 0;
-			/*
-			 * //abrir = new FileReader("pvt.txt"); ler = new BufferedReader(abrir);
-			 */
 			InputStream in = getClass().getResourceAsStream("/dados/pvt.txt");
 			ler = new BufferedReader(new InputStreamReader(in));
 			String linha;
@@ -177,9 +174,6 @@ public class Principal extends JFrame implements ActionListener {
 		ler = null;
 		try {
 			int i = 0;
-			/*
-			 * abrir = new FileReader("pts.txt"); ler = new BufferedReader(abrir);
-			 */
 			InputStream in = getClass().getResourceAsStream("/dados/pts.txt");
 			ler = new BufferedReader(new InputStreamReader(in));
 			String linha;
@@ -255,9 +249,6 @@ public class Principal extends JFrame implements ActionListener {
 		}
 		try {
 			int i = 0;
-			/*
-			 * abrir = new FileReader("ae.txt"); ler = new BufferedReader(abrir);
-			 */
 			InputStream in = getClass().getResourceAsStream("/dados/ae.txt");
 			ler = new BufferedReader(new InputStreamReader(in));
 			String linha;
@@ -286,9 +277,6 @@ public class Principal extends JFrame implements ActionListener {
 		}
 		try {
 			int i = 0;
-			/*
-			 * abrir = new FileReader("pt.txt"); ler = new BufferedReader(abrir);
-			 */
 			InputStream in = getClass().getResourceAsStream("/dados/pt.txt");
 			ler = new BufferedReader(new InputStreamReader(in));
 			String linha;
@@ -317,9 +305,6 @@ public class Principal extends JFrame implements ActionListener {
 		}
 		try {
 			int i = 0;
-			/*
-			 * abrir = new FileReader("pe.txt"); ler = new BufferedReader(abrir);
-			 */
 			InputStream in = getClass().getResourceAsStream("/dados/pe.txt");
 			ler = new BufferedReader(new InputStreamReader(in));
 			String linha;
