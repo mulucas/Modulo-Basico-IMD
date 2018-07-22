@@ -34,6 +34,7 @@ public class Principal extends JFrame implements ActionListener {
 	JPanel panel;
 	FileReader abrir;
 	BufferedReader ler;
+	InputStream in;
 	Fazer fazer = new Fazer();
 
 	public static void main(String[] args) {
@@ -59,10 +60,10 @@ public class Principal extends JFrame implements ActionListener {
 		contentPane.setLayout(null);
 		setResizable(false);
 		setTitle("NOTAS DO MODULO BASICO");
-		
+
 		ImageIcon icone = new ImageIcon(getClass().getResource("/dados/calculadora.png"));
 		setIconImage(icone.getImage());
-		
+
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(357, 219, 300, 129);
 		contentPane.add(panel_1);
@@ -72,7 +73,7 @@ public class Principal extends JFrame implements ActionListener {
 		ImageIcon logo = new ImageIcon(getClass().getResource("/dados/imd.jpg"));
 		JLabel lblNewLabel_4 = new JLabel(logo);
 		panel_1.add(lblNewLabel_4);
-		
+
 		// --------------------JPANEL--NOTAS--SEMANAIS----------------------------------------
 		panel = new JPanel();
 		panel.setBounds(0, 43, 720, 165);
@@ -111,12 +112,9 @@ public class Principal extends JFrame implements ActionListener {
 			pp[i].setVisible(true);
 			panel.add(pp[i]);
 		}
-		abrir = null;
-		ler = null;
 		try {
 			int i = 0;
-			// abrir = new FileReader("pp.txt");
-			InputStream in = getClass().getResourceAsStream("/dados/pp.txt");
+			in = getClass().getResourceAsStream("/pp.txt");
 			ler = new BufferedReader(new InputStreamReader(in));
 			String linha;
 			while ((linha = ler.readLine()) != null) {
@@ -127,8 +125,9 @@ public class Principal extends JFrame implements ActionListener {
 			e1.printStackTrace();
 		}
 		ler.close();
-
-		// in.close();
+		in.close();
+		in = null;
+		ler = null;
 		// -------------------------PVT--------JTextField----------------------------------------
 		pvt = new JTextField[19];
 		cont = 0;
@@ -145,7 +144,7 @@ public class Principal extends JFrame implements ActionListener {
 		}
 		try {
 			int i = 0;
-			InputStream in = getClass().getResourceAsStream("/dados/pvt.txt");
+			in = getClass().getResourceAsStream("/pvt.txt");
 			ler = new BufferedReader(new InputStreamReader(in));
 			String linha;
 			while ((linha = ler.readLine()) != null) {
@@ -156,7 +155,9 @@ public class Principal extends JFrame implements ActionListener {
 			e1.printStackTrace();
 		}
 		ler.close();
-		// abrir.close();
+		in.close();
+		in = null;
+		ler = null;
 		// -------------------------ptss-------------JTextField-------------------------------------
 		pts = new JTextField[19];
 		cont = 0;
@@ -174,7 +175,7 @@ public class Principal extends JFrame implements ActionListener {
 		ler = null;
 		try {
 			int i = 0;
-			InputStream in = getClass().getResourceAsStream("/dados/pts.txt");
+			in = getClass().getResourceAsStream("/pts.txt");
 			ler = new BufferedReader(new InputStreamReader(in));
 			String linha;
 
@@ -188,7 +189,9 @@ public class Principal extends JFrame implements ActionListener {
 			e1.printStackTrace();
 		}
 		ler.close();
-		// abrir.close();
+		in.close();
+		in = null;
+		ler = null;
 		// -------------------------JLABEL--DAS--SEMANAS-------------------------------------------
 		semanas = new JLabel[19];
 		cont = 0;
@@ -198,10 +201,6 @@ public class Principal extends JFrame implements ActionListener {
 			semanas[i].setBounds(74 + cont, 40, 26, 17);
 			cont += 33;
 			panel.add(semanas[i]);
-		}
-		// -------------------------SELECIONAR--tudo--O--CONTEUDO--SOZINHO------------------------------
-		for (int i = 0; i < pp.length; i++) {
-			fazer.selecionaTodoConteudo(pp[i], pvt[i]);
 		}
 		// -------------------------JLABEL--DAS--disciplina-----------------------------------------
 		disciplina = new JLabel[7];
@@ -249,7 +248,7 @@ public class Principal extends JFrame implements ActionListener {
 		}
 		try {
 			int i = 0;
-			InputStream in = getClass().getResourceAsStream("/dados/ae.txt");
+			InputStream in = getClass().getResourceAsStream("/ae.txt");
 			ler = new BufferedReader(new InputStreamReader(in));
 			String linha;
 			while ((linha = ler.readLine()) != null) {
@@ -277,7 +276,7 @@ public class Principal extends JFrame implements ActionListener {
 		}
 		try {
 			int i = 0;
-			InputStream in = getClass().getResourceAsStream("/dados/pt.txt");
+			InputStream in = getClass().getResourceAsStream("/pt.txt");
 			ler = new BufferedReader(new InputStreamReader(in));
 			String linha;
 			while ((linha = ler.readLine()) != null) {
@@ -305,7 +304,7 @@ public class Principal extends JFrame implements ActionListener {
 		}
 		try {
 			int i = 0;
-			InputStream in = getClass().getResourceAsStream("/dados/pe.txt");
+			InputStream in = getClass().getResourceAsStream("/pe.txt");
 			ler = new BufferedReader(new InputStreamReader(in));
 			String linha;
 			while ((linha = ler.readLine()) != null) {
@@ -374,6 +373,13 @@ public class Principal extends JFrame implements ActionListener {
 				}
 			}
 		});
+		// -------------------------SELECIONAR--tudo--O--CONTEUDO--SOZINHO------------------------------
+		for (int i = 0; i < pp.length; i++) {
+			fazer.selecionaTodoConteudo(pp[i], pvt[i]);
+		}
+		for (int i = 0; i < ae.length; i++) {
+			fazer.selecionaTodoConteudo(ae[i], pe[i]);
+		}
 	}
 
 	@Override
@@ -394,15 +400,22 @@ public class Principal extends JFrame implements ActionListener {
 			}
 			tffinalModulo.setText(fazer.notaFinaldoModulo(finalDisciplina[0], finalDisciplina[1], finalDisciplina[5],
 					finalDisciplina[3], finalDisciplina[2], finalDisciplina[4]));
+			String entradaX = tffinalModulo.getText();
+			double valorX = Double.parseDouble(entradaX.replace(',', '.'));
+			fazer.mudaCor(valorX, tffinalModulo);
 			// --------------------------metodo para calcular a nota do modulo
 		} else if (o == btnCalcularPt) {
+			/*
+			 * ----------Calcula pts
+			 */
 			for (int i = 0; i < pts.length; i++) {
 				pts[i].setText(fazer.calculaNotasSemanais(pvt[i], pp[i]));
 				double r = Double.parseDouble(pts[i].getText());
 				fazer.mudaCor(r, pts[i]);
 			}
-			// ---------------CALCULA PT TOTAL E FAZ A MEDIA DE INGLES e
-			// MATEMATICA------------
+			/*
+			 * MATEMATICA and ingles
+			 */
 			double valor1 = 0, resultado = 0;
 			for (int i = 0; i < 10; i++) {
 				valor1 = Double.parseDouble(pts[i].getText());
@@ -412,7 +425,11 @@ public class Principal extends JFrame implements ActionListener {
 			String resultadoEmTexto = String.format("%.1f", valor1);
 			pt[0].setText(resultadoEmTexto);
 			pt[1].setText(resultadoEmTexto);
-			// ---------------CALCULA PT TOTAL E FAZ A MEDIA DE TI-------------------
+			fazer.mudaCor(valor1, pt[0]);
+			fazer.mudaCor(valor1, pt[1]);
+			/*
+			 * ti
+			 */
 			valor1 = 0;
 			resultado = 0;
 			resultadoEmTexto = "";
@@ -423,7 +440,10 @@ public class Principal extends JFrame implements ActionListener {
 			valor1 = resultado / 8;
 			resultadoEmTexto = String.format("%.1f", valor1);
 			pt[2].setText(resultadoEmTexto);
-			// ---------------CALCULA PT TOTAL E FAZ A MEDIA DE LOGICA E SISTEMAS----
+			fazer.mudaCor(valor1, pt[2]);
+			/*
+			 * sistemas and logica
+			 */
 			valor1 = 0;
 			resultado = 0;
 			resultadoEmTexto = "";
@@ -435,7 +455,11 @@ public class Principal extends JFrame implements ActionListener {
 			resultadoEmTexto = String.format("%.1f", valor1);
 			pt[3].setText(resultadoEmTexto);
 			pt[4].setText(resultadoEmTexto);
-			// ---------------CALCULA PT TOTAL E FAZ A MEDIA DEAEQUITETURA------------
+			fazer.mudaCor(valor1, pt[3]);
+			fazer.mudaCor(valor1, pt[4]);
+			/*
+			 * arquitetura
+			 */
 			valor1 = 0;
 			resultado = 0;
 			resultadoEmTexto = "";
@@ -446,6 +470,7 @@ public class Principal extends JFrame implements ActionListener {
 			valor1 = resultado / 5;
 			resultadoEmTexto = String.format("%.1f", valor1);
 			pt[5].setText(resultadoEmTexto);
+			fazer.mudaCor(valor1, pt[5]);
 			salvaNotasSemanais();
 		} else if (o == btnLimparTudo) {
 			String message = "Deseja realmente limpar todos os campos ?";

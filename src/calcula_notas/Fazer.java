@@ -27,7 +27,8 @@ public class Fazer {
 	}
 	
 	public void salvarpts(JTextField[] campos) throws IOException{
-		FileWriter cria = new FileWriter("/dados/pts.txt");
+		String path = System.getProperty("user.dir");
+		FileWriter cria = new FileWriter(path+"/bin/pts.txt");
 		BufferedWriter gravarArq = new BufferedWriter(cria);
 		for( int i=0; i < campos.length; i++){
 			String valor = campos[i].getText();
@@ -39,19 +40,24 @@ public class Fazer {
 	}
 	
 	public void salvarpp(JTextField[] campos) throws IOException{
-		FileWriter cria = new FileWriter("/dados/pp.txt");
+		//System.out.println("entrou");
+		//System.out.println("Usando propriedade user.dir: " + path);
+		String path = System.getProperty("user.dir");
+		FileWriter cria = new FileWriter(path+"/bin/pp.txt");
 		BufferedWriter gravarArq = new BufferedWriter(cria);
 		for( int i=0; i < campos.length; i++){
 			String valor = campos[i].getText();
 			gravarArq.write(valor);
 			gravarArq.newLine();
+//			System.out.println("salvou");
 		} 
 		gravarArq.close();
 		cria.close();
 	}
 	
 	public void salvarae(JTextField[] campos) throws IOException{
-		FileWriter cria = new FileWriter("/dados/ae.txt");
+		String path = System.getProperty("user.dir");
+		FileWriter cria = new FileWriter(path+"/bin/ae.txt");
 		BufferedWriter gravarArq = new BufferedWriter(cria);
 		for( int i=0; i < campos.length; i++){
 			String valor = campos[i].getText();
@@ -62,7 +68,8 @@ public class Fazer {
 		cria.close();
 	}
 	public void salvarpe(JTextField[] campos) throws IOException{
-		FileWriter cria = new FileWriter("/dados/pe.txt");
+		String path = System.getProperty("user.dir");
+		FileWriter cria = new FileWriter(path+"/bin/pe.txt");
 		BufferedWriter gravarArq = new BufferedWriter(cria);
 		for( int i=0; i < campos.length; i++){
 			String valor = campos[i].getText();
@@ -74,7 +81,8 @@ public class Fazer {
 	}
 	
 	public void salvarpvt(JTextField[] campos) throws IOException{
-		FileWriter cria = new FileWriter("/dados/pvt.txt");
+		String path = System.getProperty("user.dir");
+		FileWriter cria = new FileWriter(path+"/bin/pvt.txt");
 		BufferedWriter gravarArq = new BufferedWriter(cria);
 		for( int i=0; i < campos.length; i++){
 			String valor = campos[i].getText();
@@ -86,7 +94,8 @@ public class Fazer {
 	}
 	
 	public void salvarpt(JTextField[] campos) throws IOException{
-		FileWriter cria = new FileWriter("/dados/pt.txt");
+		String path = System.getProperty("user.dir");
+		FileWriter cria = new FileWriter(path+"/bin/pt.txt");
 		BufferedWriter gravarArq = new BufferedWriter(cria);
 		for( int i=0; i < campos.length; i++){
 			String valor = campos[i].getText();
